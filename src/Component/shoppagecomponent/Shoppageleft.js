@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import Subdropdownitems from "./Subdropdownitems";
-const Shoppageleft = ({ dropdownControl, arrowControl, title }) => {
-  console.log(arrowControl);
+
+const Shoppageleft = ({ dropdownControl, title, data }) => {
   const [show, setshow] = useState(dropdownControl);
   const [dropdown] = useState(dropdownControl);
 
@@ -15,40 +15,59 @@ const Shoppageleft = ({ dropdownControl, arrowControl, title }) => {
       {dropdown ? (
         <div
           onClick={handleDropDown}
-          className="flex cursor-pointer items-center justify-between p-3"
+          className="mt-5 mb-12 flex cursor-pointer items-center justify-between font-dmsans text-lg font-semibold text-primary"
         >
-          <h2>{title}</h2>
-          {arrowControl && (show ? <IoMdArrowDropup /> : <IoMdArrowDropdown />)}
+          <h3>{title}</h3>
+
+          {show ? <IoMdArrowDropup /> : <IoMdArrowDropdown />}
         </div>
       ) : (
-        <div className="flex  cursor-pointer justify-between p-3">
-          <h2>{title}</h2>
+        <div className="mt-5 mb-12 flex cursor-pointer  justify-between font-dmsans text-lg font-semibold text-primary">
+          <h3>{title}</h3>
         </div>
       )}
 
       {show && (
         <>
-          <Subdropdownitems
-            dropdownControlprops={true}
-            subDropdownTitle="taufik subcatagories 1"
-          >
-            <h1>taufik islam</h1>
-            <h1>taufik islam</h1>
-            <h1>taufik islam</h1>
-          </Subdropdownitems>
+          {data.map((item) =>
+            item.subcatogories ? (
+              <Subdropdownitems
+                dropdownControlprops={item.subcatogories ? true : false}
+                subDropdownTitle={item.name}
+              >
+                {item.subcatogories &&
+                  item.subcatogories.map((subitem) => <p>{subitem.name}</p>)}
+              </Subdropdownitems>
+            ) : (
+              <Subdropdownitems
+                dropdownControlprops={item.subcatogories ? true : false}
+                subDropdownTitle={item.name}
+                color={item.code}
+              ></Subdropdownitems>
+            )
+          )}
         </>
       )}
 
       {!dropdown && (
         <>
-          <Subdropdownitems
-            dropdownControlprops={false}
-            subDropdownTitle="taufik subcatagories 1"
-          >
-            <h1>taufik islam</h1>
-            <h1>taufik islam</h1>
-            <h1>taufik islam</h1>
-          </Subdropdownitems>
+          {data.map((item) =>
+            item.subcatogories ? (
+              <Subdropdownitems
+                dropdownControlprops={item.subcatogories ? true : false}
+                subDropdownTitle={item.name}
+              >
+                {item.subcatogories &&
+                  item.subcatogories.map((subitem) => <p>{subitem.name}</p>)}
+              </Subdropdownitems>
+            ) : (
+              <Subdropdownitems
+                dropdownControlprops={item.subcatogories ? true : false}
+                subDropdownTitle={item.name}
+                color={item.code}
+              ></Subdropdownitems>
+            )
+          )}
         </>
       )}
     </>

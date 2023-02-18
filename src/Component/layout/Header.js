@@ -47,7 +47,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="bg-[#979797cc]">
+    <div className="bg-[#d4d4d4]">
       <Container className="mx-auto max-w-container p-5">
         <Flex className="flex items-center justify-between">
           <Dropdown
@@ -92,7 +92,7 @@ const Header = () => {
 
           <div className="relative w-[600px]">
             <Search
-              className="w-full rounded px-5 py-3 font-dmsans  text-base outline-gray-800 placeholder:text-[#C4C4C4]"
+              className="w-full  rounded px-5 py-3 font-dmsans  text-base outline-none placeholder:text-[#C4C4C4]"
               placehoder="Search Products"
             />
             <BiSearchAlt className="absolute top-4 right-5 cursor-pointer text-[22px]" />

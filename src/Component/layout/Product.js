@@ -11,7 +11,7 @@ const Product = ({ productImg, badgeControl, productName, productPrice }) => {
       <div className="group relative  overflow-y-hidden">
         <Images imgsrc={productImg} />
         {badgeControl && <ProductBadge badgetitle="New" />}
-        <div className="absolute  h-fit w-full bg-green-600 duration-300 ease-in group-hover:bottom-0 sm:absolute sm:bottom-[-95px]  sm:h-[60%] sm:w-full sm:bg-green-600 md:bottom-[-100px] md:bg-white desktop:bottom-[-180px] desktop:h-[50%]">
+        <div className="absolute  h-fit w-full bg-transparent duration-300 ease-in group-hover:bottom-0 sm:absolute sm:bottom-[-95px]  sm:h-[60%] sm:w-full sm:bg-transparent md:bottom-[-100px] md:bg-white desktop:bottom-[-180px] desktop:h-[50%]">
           <Flex className="mb-0 flex justify-start sm:mb-3  sm:items-center sm:justify-end  sm:gap-x-4">
             <h3 className="font-dmsans text-[9px] text-[#76767] duration-200 ease-out sm:text-[13px] sm:font-normal sm:hover:font-bold md:text-[14px] ">
               <Link>Add to Wish List</Link>

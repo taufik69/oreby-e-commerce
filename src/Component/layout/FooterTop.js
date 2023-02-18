@@ -8,7 +8,7 @@ import Images from "./Images";
 import Footerbottom from "./Footerbottom";
 const FooterTop = () => {
   return (
-    <div className=" bg-[#979797cc] ">
+    <div className=" bg-[#d4d4d4] ">
       <Container className="mx-auto  max-w-container p-5">
         <div className="pt-5 sm:flex sm:justify-between sm:pt-16">
           <FooterListItem>

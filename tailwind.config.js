@@ -13,6 +13,7 @@ module.exports = {
         primary: "#262626",
         aditionalColor: "#6D6D6D",
         seconddary: "#767676",
+        inputbottom: "#D8D8D8",
       },
       screens: {
         desktop: "1280px",
